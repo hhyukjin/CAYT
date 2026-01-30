@@ -1,0 +1,81 @@
+# ============================================
+# CAYT Backend .gitignore
+# ============================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 가상환경
+.venv/
+venv/
+ENV/
+env/
+.uv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 환경 변수 (민감 정보)
+.env
+.env.local
+.env.*.local
+
+# 테스트/커버리지
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ruff
+.ruff_cache/
+
+# 임시 파일
+/tmp/
+*.tmp
+*.temp
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 프로젝트 특정
+/temp_subtitles/
+*.vtt
+*.srt

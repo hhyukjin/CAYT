@@ -1,0 +1,174 @@
+/* ============================================
+   CAYT - 자막 오버레이 스타일
+   ============================================ */
+
+/* 자막 컨테이너 */
+.cayt-subtitle-container {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.cayt-subtitle-container.hidden {
+  opacity: 0;
+}
+
+/* 자막 텍스트 */
+.cayt-subtitle-text {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: 4px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* 자막 크기 옵션 */
+.cayt-subtitle-text.size-small {
+  font-size: 14px;
+  padding: 6px 12px;
+}
+
+.cayt-subtitle-text.size-medium {
+  font-size: 18px;
+  padding: 8px 16px;
+}
+
+.cayt-subtitle-text.size-large {
+  font-size: 24px;
+  padding: 10px 20px;
+}
+
+/* 원문 표시 (듀얼 자막) */
+.cayt-subtitle-original {
+  display: block;
+  font-size: 14px;
+  color: #cccccc;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ============================================
+   CAYT 컨트롤 버튼
+   ============================================ */
+
+.cayt-control-container {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.cayt-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cayt-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cayt-toggle-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+}
+
+.cayt-toggle-btn.active {
+  background-color: rgba(62, 166, 255, 0.3);
+}
+
+.cayt-toggle-btn.active svg {
+  fill: #3ea6ff;
+}
+
+.cayt-toggle-btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.cayt-toggle-btn.loading svg {
+  animation: cayt-spin 1s linear infinite;
+}
+
+@keyframes cayt-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   로딩 오버레이
+   ============================================ */
+
+.cayt-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+}
+
+.cayt-loading-overlay.hidden {
+  display: none;
+}
+
+.cayt-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #3ea6ff;
+  border-radius: 50%;
+  animation: cayt-spin 1s linear infinite;
+}
+
+.cayt-loading-text {
+  margin-top: 16px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* ============================================
+   에러 메시지
+   ============================================ */
+
+.cayt-error-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 9999;
+  max-width: 80%;
+  text-align: center;
+}
